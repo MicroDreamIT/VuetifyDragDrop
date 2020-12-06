@@ -6,7 +6,19 @@
       :clipped="clipped"
       fixed
       app
+      class="elevation-0"
+      color="#FCFDFF"
     >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Application
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            subtext
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -28,6 +40,9 @@
       :clipped-left="clipped"
       fixed
       app
+      color="white"
+      outlined
+      class="elevation-0"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn
