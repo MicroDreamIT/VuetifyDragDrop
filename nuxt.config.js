@@ -24,6 +24,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~plugins/vuedraggable.js', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -43,8 +44,10 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
       themes: {
+        light:{
+          background: '#FCFDFF'
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,

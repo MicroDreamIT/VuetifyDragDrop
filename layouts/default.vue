@@ -6,8 +6,8 @@
       :clipped="clipped"
       fixed
       app
-      class="elevation-0"
-      color="#FCFDFF"
+      floating
+      class="elevation-2"
     >
       <v-list-item>
         <v-list-item-content>
@@ -72,7 +72,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-main>
+    <v-main v-bind:style="{ background: $vuetify.theme.themes.light.background}">
       <v-container>
         <nuxt />
       </v-container>
@@ -94,12 +94,12 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+<!--    <v-footer-->
+<!--      :absolute="!fixed"-->
+<!--      app-->
+<!--    >-->
+<!--      <span>&copy; {{ new Date().getFullYear() }}</span>-->
+<!--    </v-footer>-->
   </v-app>
 </template>
 
