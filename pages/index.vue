@@ -1,22 +1,26 @@
 <template>
 <v-container>
   <v-row>
-    <no-ssr>
-      <draggable class="row">
-        <v-col md="3" cols="12">
-          <v-card>
-            <v-card-title>card 1</v-card-title>
-            <v-card-text>I am 1</v-card-text>
+    <v-col md="3" cols="12">
+      <no-ssr>
+        <draggable @change="log" :list="list1" group="people">
+          <v-card v-for="(item, index) in list1" :key="index" class="mb-4">
+            <v-card-title>{{ item.title }}</v-card-title>
+            <v-card-text>{{ item.content }}</v-card-text>
           </v-card>
-        </v-col>
-        <v-col md="3" cols="12">
-          <v-card>
-            <v-card-title>card 2</v-card-title>
-            <v-card-text>I am 2</v-card-text>
+        </draggable>
+      </no-ssr>
+    </v-col>
+    <v-col md="3" cols="12">
+      <no-ssr>
+        <draggable @change="log" :list="list2" group="people">
+          <v-card v-for="(item, index) in list2" :key="index" class="mb-4">
+            <v-card-title>{{ item.title }}</v-card-title>
+            <v-card-text>{{ item.content }}</v-card-text>
           </v-card>
-        </v-col>
-      </draggable>
-    </no-ssr>
+        </draggable>
+      </no-ssr>
+    </v-col>
   </v-row>
 </v-container>
 </template>
@@ -29,15 +33,16 @@ export default {
   order: 1,
   data:()=>({
     list1: [
-      { name: "John", id: 1 },
-      { name: "Joao", id: 2 },
-      { name: "Jean", id: 3 },
-      { name: "Gerard", id: 4 }
+      { title: "John", content:'hello John', id: 1 },
+      { title: "Joao", content:'hello Joao', id: 2 },
+      { title: "Jean", content:'hello Jean', id: 3 },
+      { title: "Gerard", content:'hello Gerard', id: 4 }
     ],
     list2: [
-      { name: "Juan", id: 5 },
-      { name: "Edgard", id: 6 },
-      { name: "Johnson", id: 7 }
+      { title: "John2", content:'hello John', id: 5 },
+      { title: "Joao2", content:'hello Joao', id: 6 },
+      { title: "Jean2", content:'hello Jean', id: 7 },
+      { title: "Gerard2", content:'hello Gerard', id: 8 }
     ]
   }),
   methods:{
